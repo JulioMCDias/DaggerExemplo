@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DaggerExemplo</string>
+    <string name="storeCar">Loja de carros</string>
+    <string name="list_car">Lista de carros</string>
+    <string name="add_car">Adicionar carro</string>
+    <string name="title_activity_add_car">AddCarActivity</string>
+</resources>
