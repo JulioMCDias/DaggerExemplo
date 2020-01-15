@@ -11,4 +11,6 @@
     <string name="year_manufacture">ano de fabricação</string>
     <string name="btn_cancel">cancelar</string>
     <string name="btn_add">adicionar</string>
+    <string name="name">nome</string>
+    <string name="year">ano</string>
 </resources>

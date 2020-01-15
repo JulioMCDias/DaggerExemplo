@@ -82,11 +82,11 @@
 
     <Button
         android:id="@+id/btn_cancel"
+        style="@style/btnMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_cancel"
-        style="@style/btnMain"
         android:onClick="btnSaveCar"
+        android:text="@string/btn_cancel"
         app:layout_constraintBottom_toBottomOf="@+id/btn_add_car"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,11 +94,11 @@
 
     <Button
         android:id="@+id/btn_add_car"
+        style="@style/btnMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_add"
-        style="@style/btnMain"
         android:onClick="btnCancel"
+        android:text="@string/btn_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -111,7 +111,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_end="206dp"
+        app:layout_constraintGuide_begin="205dp"
         app:layout_constraintStart_toStartOf="parent" />
 
 
