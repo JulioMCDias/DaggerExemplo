@@ -13,7 +13,7 @@
         <activity
             android:name=".ui.ListCarActivity"
             android:label="@string/title_activity_list_car"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".ui.AddCarActivity"
             android:label="@string/title_activity_add_car"

@@ -2,8 +2,9 @@ package com.jlmcdeveloper.daggerexemplo.data.db.model;
 
 
 public class Car {
+    private long id;
     private String name;
-    private String year;
+    private int year;
 
     public String getName() {
         return name;
@@ -13,11 +14,19 @@ public class Car {
         this.name = name;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

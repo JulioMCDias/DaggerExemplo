@@ -8,7 +8,7 @@ public class CustomSQLiteOpenHelper extends SQLiteOpenHelper {
     public static final String TABLE_CARS = "cars";
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_NAMES = "name";
-    public static final String COLUMN_ANO = "year";
+    public static final String COLUMN_YEAR = "year";
     private static final String DATABASE_NAME = "cars.db";
     private static final int DATABASE_VERSION = 1;
 
@@ -16,7 +16,7 @@ public class CustomSQLiteOpenHelper extends SQLiteOpenHelper {
     private static final String DATABASE_CREATE = " create table "
             + TABLE_CARS + "(" + COLUMN_ID
             + " integer primary key autoincrement , " + COLUMN_NAMES
-            + " text not null , " + COLUMN_ANO + " integer );";
+            + " text not null , " + COLUMN_YEAR + " integer );";
 
     public CustomSQLiteOpenHelper ( Context context ) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
