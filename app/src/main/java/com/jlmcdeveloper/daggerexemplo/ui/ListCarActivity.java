@@ -7,17 +7,20 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.jlmcdeveloper.daggerexemplo.AndroidApplication;
 import com.jlmcdeveloper.daggerexemplo.R;
-import com.jlmcdeveloper.daggerexemplo.data.db.CarsDAO;
-import com.jlmcdeveloper.daggerexemplo.data.db.model.Car;
+import com.jlmcdeveloper.daggerexemplo.contract.ActivityComponent;
+import com.jlmcdeveloper.daggerexemplo.contract.DaggerActivityComponent;
+import com.jlmcdeveloper.daggerexemplo.module.RecycleAdapterModule;
 
-import java.util.List;
+import javax.inject.Inject;
 
 public class ListCarActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private RecycleAdapter adapter;
-    private CarsDAO carsDAO;
+
+    @Inject
+    RecycleAdapter adapter;
 
 
     @Override
@@ -27,15 +30,17 @@ public class ListCarActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
 
+
+       ActivityComponent activityComponent = DaggerActivityComponent.builder()
+                .applicationComponent(AndroidApplication.getComponent())
+                .recycleAdapterModule(new RecycleAdapterModule(this))
+                .build();
+
+        activityComponent.inject(this);
+
+
         recyclerView = findViewById(R.id.rc_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        carsDAO = new CarsDAO(this);
-        carsDAO.open();
-        List<Car> cars = carsDAO.getAll();
-
-        adapter = new RecycleAdapter(carsDAO.getAll());
-        carsDAO.close();
 
         recyclerView.setAdapter(adapter);
     }

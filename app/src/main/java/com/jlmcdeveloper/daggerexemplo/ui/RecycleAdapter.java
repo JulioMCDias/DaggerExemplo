@@ -10,9 +10,13 @@ import com.jlmcdeveloper.daggerexemplo.data.db.model.Car;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class RecycleAdapter extends RecyclerView.Adapter<ViewHolder> {
+
     private List<Car> carList;
 
+    @Inject
     public RecycleAdapter(List<Car> list){
         carList = list;
     }

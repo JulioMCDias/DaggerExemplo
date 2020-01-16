@@ -11,16 +11,22 @@ import com.jlmcdeveloper.daggerexemplo.data.db.model.Car;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class CarsDAO {
     private SQLiteDatabase database ;
+
+
+    CustomSQLiteOpenHelper sqliteOpenHelper ;
+
     private String [] columns = { CustomSQLiteOpenHelper.COLUMN_ID,
             CustomSQLiteOpenHelper.COLUMN_NAMES,
             CustomSQLiteOpenHelper.COLUMN_YEAR};
-    private CustomSQLiteOpenHelper sqliteOpenHelper ;
 
 
-    public CarsDAO (Context context) {
-        sqliteOpenHelper = new CustomSQLiteOpenHelper(context);
+    @Inject
+    public CarsDAO (CustomSQLiteOpenHelper sqliteOpenHelper) {
+        this.sqliteOpenHelper = sqliteOpenHelper;
     }
 
 
@@ -60,7 +66,7 @@ public class CarsDAO {
     }
 
     public List<Car> getAll () {
-        List<Car> cars = new ArrayList<Car>();
+        List<Car> cars = new ArrayList<>();
         Cursor cursor = database.query(CustomSQLiteOpenHelper.TABLE_CARS,
                 columns, null, null, null, null, null);
         cursor.moveToFirst();

@@ -9,10 +9,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.jlmcdeveloper.daggerexemplo.R;
 
 public class ViewHolder extends RecyclerView.ViewHolder {
-    public TextView textViewName;
-    public TextView textViewYear;
+    TextView textViewName;
+    TextView textViewYear;
 
-    public ViewHolder(@NonNull View itemView) {
+    ViewHolder(@NonNull View itemView) {
         super(itemView);
 
         textViewName = itemView.findViewById(R.id.cad_view_text_name);

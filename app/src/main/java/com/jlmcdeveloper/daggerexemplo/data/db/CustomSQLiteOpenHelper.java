@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import javax.inject.Inject;
+
 public class CustomSQLiteOpenHelper extends SQLiteOpenHelper {
     public static final String TABLE_CARS = "cars";
     public static final String COLUMN_ID = "_id";
@@ -18,6 +20,7 @@ public class CustomSQLiteOpenHelper extends SQLiteOpenHelper {
             + " integer primary key autoincrement , " + COLUMN_NAMES
             + " text not null , " + COLUMN_YEAR + " integer );";
 
+    @Inject
     public CustomSQLiteOpenHelper ( Context context ) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
